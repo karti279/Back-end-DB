@@ -19,7 +19,7 @@ spec:
       - name: docker-registry-secret
       containers:
       - name: backend-api
-        image: persevcareers6577/perseverance-project:VERSION
+        image: karthik279/project:VERSION
         imagePullPolicy: Always
         env:
           - name: DB_CONN_STR
