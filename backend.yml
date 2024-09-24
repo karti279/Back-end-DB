@@ -16,7 +16,7 @@ spec:
         role: backend
     spec:
       imagePullSecrets:
-      - name: docker-registry-secret
+      - name: my-docker-secret
       containers:
       - name: backend-api
         image: karthik279/project:VERSION
@@ -43,11 +43,10 @@ metadata:
   name: backend-service-api
   namespace: three-tier
 spec:
-  type: NodePort 
+  type: ClusterIP  # Changed from NodePort to ClusterIP
   ports:
   - port: 8080
     targetPort: 3100
-    nodePort: 30008
     protocol: TCP
   selector:
     role: backend
